@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.newStore = void 0;
+const tslib_1 = require("tslib");
+const reducer_1 = require("../redux/reducer");
+const redux_1 = require("redux");
+const redux_thunk_1 = tslib_1.__importDefault(require("redux-thunk"));
+const initialMiddleware_1 = require("./middleware/initialMiddleware");
+const clientWsMiddleware_1 = require("./middleware/clientWsMiddleware");
+const middleWares = redux_1.applyMiddleware(redux_thunk_1.default, clientWsMiddleware_1.clientWsMiddleware, initialMiddleware_1.initialMiddleware);
+const newStore = () => redux_1.createStore(reducer_1.reducer, middleWares);
+exports.newStore = newStore;

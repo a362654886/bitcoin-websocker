@@ -1,0 +1,246 @@
+#root {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 110px 180px 500px 30% 30%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* grid */
+#loginBody {
+  grid-row: 2/3;
+  grid-column: 2/3;
+}
+
+.menu {
+  grid-row: 1/2;
+  grid-column: 1/4;
+}
+.chartMain {
+  grid-row: 3/4;
+  grid-column: 1/4;
+  height: 480px;
+}
+.chartLine {
+  grid-row: 4/5;
+  grid-column: 1/4;
+  height: 240px;
+}
+
+.menuTabs {
+  grid-row: 2/3;
+  grid-column: 1/4;
+}
+/* 
+*/
+
+.chartClass {
+}
+
+/* display */
+
+.menuLabel {
+  display: flex;
+  margin-right: 2rem;
+}
+
+.menuType {
+  display: flex;
+}
+
+.addChartButton {
+  float: right;
+}
+
+.menuTabs {
+  display: flex;
+}
+
+/* margin */
+
+/* height and width */
+
+.addChartButton {
+  height: 80%;
+}
+
+#kline_chart {
+  width: 100%;
+  height: 500px;
+}
+
+canvas {
+  width: 100px;
+}
+
+.chartClass {
+  margin: 1rem;
+}
+
+.menu,
+.menuTabs,
+.chartMain {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.menuLabel {
+  height: 30px;
+}
+#lineChart {
+  margin-left: 10px;
+}
+
+.bottomLines{
+  padding-left: 80px;
+}
+
+.socketWindow{
+  height: 80px;
+}
+/* color */
+
+#root {
+  background-color: #273746;
+}
+
+.menu,
+.menuTabs,
+.chartMain,
+.chartLine {
+  background-color: #566573;
+}
+
+.whiteText {
+  color: white;
+}
+
+.socketWindow{
+  background-color: white;
+}
+
+/* text align */
+
+.menuTitle {
+  text-align: center;
+}
+
+/* float */
+.socketWindow {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+/* 
+*/
+
+/* line css color */
+.redCircle {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.greenCircle {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 25px;
+  margin-top: 7px;
+}
+
+#rsi {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 85px;
+  margin-top: 7px;
+}
+
+#adx1 {
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 25px;
+  margin-top: 7px;
+}
+
+#adx2 {
+  width: 10px;
+  height: 10px;
+  background-color: DeepPink;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 2px;
+  margin-top: 7px;
+}
+
+#adx3 {
+  width: 10px;
+  height: 10px;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 2px;
+  margin-top: 7px;
+}
+
+#macd1 {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 15px;
+  margin-top: 7px;
+}
+
+#macd2 {
+  width: 10px;
+  height: 10px;
+  background-color: purple;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 2px;
+  margin-top: 7px;
+}
+
+#macd3 {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 25px;
+  margin-left: 2px;
+  margin-top: 7px;
+}
+
+#mfi {
+  width: 10px;
+  height: 10px;
+  background-color: cyan;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 15px;
+  margin-top: 7px;
+}
