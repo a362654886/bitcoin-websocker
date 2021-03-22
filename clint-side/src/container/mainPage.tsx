@@ -225,6 +225,18 @@ const MainPage = (): JSX.Element => {
 
   const chooseChart = (key: string) => (mainState.chart.title = key);
 
+  const getMenuTitle = (title: string, item: [string, webSocketData]) =>{
+    if(mainState.chart.title.indexOf(title) == -1){
+      return (<p>
+      <span className="menuTitle">{transferStringToObj(item[0]).symbol}</span>
+    </p> )
+    }else{
+      return (<p>
+        <span>{transferStringToObj(item[0]).symbol}</span>
+      </p> )
+    }
+  }
+
   const getChartMenu = (): JSX.Element | JSX.Element[] => {
     return (
       <Tabs defaultActiveKey="0" onChange={chooseChart}>
@@ -233,9 +245,9 @@ const MainPage = (): JSX.Element => {
             tab={
               <div>
                 <CandleStick divId={item[0]} type={item[0]} />
-                <p className="menuTitle">
-                  {transferStringToObj(item[0]).symbol}
-                </p>
+                {
+                  getMenuTitle(transferStringToObj(item[0]).symbol,item)
+                }
               </div>
             }
             key={item[0]}

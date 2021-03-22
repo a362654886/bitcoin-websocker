@@ -27,11 +27,11 @@ export interface SubscriptionDeleteAction {
   type: typeof DELETE_SUBSCRIPTION;
 }
 
-const handlers = {
+export const handlers = {
   ADD_SUBSCRIPTION: (
     state: Map<string, Set<string>>,
     action: SubscriptionAddAction
-  ) => {
+  ):  Map<string, Set<string>> => {
     const key = `${action.payload.subscriptionType.exchange}${action.payload.subscriptionType.symbol}${action.payload.subscriptionType.time}`;
     //if map have this key
     const typeExist = state.has(key);
@@ -50,7 +50,7 @@ const handlers = {
   DELETE_SUBSCRIPTION: (
     state: Map<string, Set<string>>,
     action: SubscriptionDeleteAction
-  ) => {
+  ):  Map<string, Set<string>> => {
     const key = `${action.payload.subscriptionType.exchange}${action.payload.subscriptionType.symbol}${action.payload.subscriptionType.time}`;
     const set = state.get(key);
     set?.delete(action.payload.clientId);

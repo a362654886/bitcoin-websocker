@@ -18,7 +18,7 @@ export type serviceOrderFns<T> = {
   delete: (clientId: string, type: string) => void;
 };
 
-type KlineFn = {
+export type KlineFn = {
   clientId: string;
   sendFn: (kline: Kline) => any;
 };
@@ -31,8 +31,8 @@ type OrderFn = {
 export const serverKlineWebSockets = new Map<string, WebSocket>();
 export const serverOrderWebSockets = new Map<string, WebSocket>();
 //save functions which socket need to run
-const klineFnMap = new Map<string, Set<KlineFn>>(); //save all clientIds
-const orderFnMap = new Map<string, Set<OrderFn>>(); //save all clientIds
+export const klineFnMap = new Map<string, Set<KlineFn>>(); //save all clientIds
+export const orderFnMap = new Map<string, Set<OrderFn>>(); //save all clientIds
 
 export const getService = async <T>(
   exchange: ExchangeEnum,
@@ -133,7 +133,7 @@ export const OrderService = async <T>(
   };
 };
 
-const KlineSocketExist = (
+export const KlineSocketExist = (
   exchange: ExchangeEnum,
   symbol: SymbolEnum,
   time: TimeEnum
@@ -148,6 +148,7 @@ const KlineSocketExist = (
   const exist = serverKlineWebSockets.has(`${exchange}${symbol}${time}`);
 
   if (!exist) {
+    //build new websocket
     const klineFn = newKlineWebSocketMap.get(exchange) as WebSocketObj;
 
     const socketObj = klineFn(time, symbol);
@@ -172,7 +173,7 @@ const KlineSocketExist = (
 
 };
 
-const OrderSocketExist = async (
+export const OrderSocketExist = async (
   exchange: ExchangeEnum,
   symbol: SymbolEnum,
   time: TimeEnum

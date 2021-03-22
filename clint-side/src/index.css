@@ -56,6 +56,11 @@
   display: flex;
 }
 
+#loginButton {
+  margin-left: 22.5%;
+	position: absolute;
+}
+
 /* margin */
 
 /* height and width */
@@ -100,6 +105,10 @@ canvas {
 .socketWindow{
   height: 80px;
 }
+
+.loginInput,#loginButton{
+  margin-top: 1rem;
+}
 /* color */
 
 #root {
@@ -119,6 +128,9 @@ canvas {
 
 .socketWindow{
   background-color: white;
+}
+.menuTitle{
+  color: white;
 }
 
 /* text align */

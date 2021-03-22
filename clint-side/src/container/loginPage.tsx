@@ -7,6 +7,7 @@ import { auth_actions, AUTH_USER_LOADING } from "../redux/auth";
 import { AlertType, IStoreState } from "../types";
 import { LoginType } from "../types/auth-type";
 import AlertBox from "../component/alertBox";
+import { Button } from 'antd';
 
 const LoginPage = (): JSX.Element => {
   const dispatch = useDispatch();
@@ -73,14 +74,12 @@ const LoginPage = (): JSX.Element => {
       return (
         <div>
           {AlertBox(alertInfo)}
-          <div>
-            <Input
-              className="loginInput"
-              onChange={input_change}
-              placeholder="email"
-              value={user_email}
-            />
-          </div>
+          <Input
+            className="loginInput"
+            onChange={input_change}
+            placeholder="email"
+            value={user_email}
+          />
           <Input.Password
             className="loginInput"
             onChange={input_change}
@@ -88,19 +87,15 @@ const LoginPage = (): JSX.Element => {
             value={user_password}
           />
           <div id="loginButton">
-            <button data-testid="login-button" onClick={submit}>
+            <Button data-testid="login-button" onClick={submit}>
               Submit
-            </button>
+            </Button>
           </div>
         </div>
       );
     }
   };
 
-  return (
-    <div id="loginBody">
-      {loading()}
-    </div>
-  );
+  return <div id="loginBody">{loading()}</div>;
 };
 export default LoginPage;
