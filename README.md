@@ -5,9 +5,11 @@ a web to monitor binance data and then show those data by charts.
 **RUN:**
 
 Client-side：  run "npm run start" in "./client-side" folder.
+
        Test:   run "npm run test"  in "./client-side" folder.          
 
 Serve-side:    run "npm run serve"  in  "./server" folder.
+
        Test:   run "npm run test"   in "./client-side" folder.
 
 
