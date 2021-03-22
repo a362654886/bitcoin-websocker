@@ -24,11 +24,11 @@ export interface SubscriptionDeleteAction {
 }
 
 //reducer
-const handlers = {
+export const handlers = {
   SUBSCRIPTION_ADD: (
     state: Map<string, Subscription>,
     action: SubscriptionAddAction
-  ) => {
+  ): Map<string, Subscription> => {
     const type = `${action.data.subscription.exchange}${action.data.subscription.symbol}${action.data.subscription.time}`;
     const typeExist = state.has(type);
     if (!typeExist) {
@@ -39,7 +39,7 @@ const handlers = {
   SUBSCRIPTION_DELETE: (
     state: Map<string, Subscription>,
     action: SubscriptionDeleteAction
-  ) => {
+  ): Map<string, Subscription> => {
     state.delete(action.data);
     const newState = new Map<string, Subscription>(state);
     return newState;

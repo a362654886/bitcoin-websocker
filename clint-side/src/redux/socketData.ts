@@ -48,11 +48,11 @@ export interface WebSocketOpenAction {
   type: typeof OPEN_SOCKET_DATA;
 }
 
-const handlers = {
+export const handlers = {
   UPDATE_SOCKET_DATA_KLINE: (
     state: Map<string, webSocketData>,
     action: WebSocketUpdateKlineAction
-  ) => {
+  ): Map<string, webSocketData> => {
     const typeExist = state.has(action.payload.type);
     if (typeExist) {
       const mapArr = state.get(action.payload.type) as webSocketData;
@@ -77,7 +77,7 @@ const handlers = {
   UPDATE_SOCKET_DATA_ORDER: (
     state: Map<string, webSocketData>,
     action: WebSocketUpdateOrderAction
-  ) => {
+  ): Map<string, webSocketData> => {
     const typeExist = state.has(action.payload.type);
     if (typeExist) {
       const mapArr = state.get(action.payload.type) as webSocketData;
@@ -94,7 +94,7 @@ const handlers = {
   INITIAL_SOCKET_DATA: (
     state: Map<string, webSocketData>,
     action: WebSocketInitialAction
-  ) => {
+  ): Map<string, webSocketData> => {
     const type = `${action.payload.exchange}${action.payload.symbol}${action.payload.time}`;
     state.set(type, action.payload.data);
     return state;
@@ -102,7 +102,7 @@ const handlers = {
   OPEN_SOCKET_DATA: (
     state: Map<string, webSocketData>,
     action: WebSocketInitialAction
-  ) => {
+  ): Map<string, webSocketData> => {
     const type = `${action.payload.exchange}${action.payload.symbol}${action.payload.time}`;
     state.set(type, action.payload.data);
     return state;
@@ -110,7 +110,7 @@ const handlers = {
   DELETE_SOCKET_DATA: (
     state: Map<string, webSocketData>,
     action: WebSocketDeleteAction
-  ) => {
+  ): Map<string, webSocketData> => {
     state.delete(action.payload);
     const newState = new Map<string, webSocketData>(state);
     return newState;
