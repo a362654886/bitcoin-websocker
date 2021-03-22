@@ -4,12 +4,14 @@ a web to monitor binance data and then show those data by charts.
 
 **RUN:**
 
-Client-side：  
+Client-side：
+
        run "npm run start" in "./client-side" folder.
 
        Test:   run "npm run test"  in "./client-side" folder.          
 
-Serve-side:    
+Serve-side:
+
        run "npm run serve"  in  "./server" folder.
 
        Test:   run "npm run test"   in "./client-side" folder.
@@ -17,8 +19,8 @@ Serve-side:
 
 **LOGIN test email**
 
-email: test@outlook.com 
-password: 111222
+      email: test@outlook.com 
+      password: 111222
 
 **Main page**
 
